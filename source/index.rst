@@ -8,8 +8,8 @@ Welcome to ProteinArt's documentation!
 Here I'll be providing the documentation for the applications and scripts for membrane protein simulations.
 
 Contents:
-	-- Visualising the ion channel
-	-- Domain twist
+	* Visualising the ion channel
+	* Domain twist
 
 .. toctree::
    :maxdepth: 2
