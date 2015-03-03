@@ -1,0 +1,1 @@
+Search.setIndex({envversion:42,terms:{index:[],search:[],visualis:0,script:0,provid:0,modul:[],domain:0,here:0,simul:0,twist:0,ion:0,applic:0,membran:0,protein:0,content:0,page:[],channel:0},objtypes:{},objnames:{},filenames:["index"],titles:["Welcome to ProteinArt&#8217;s documentation!"],objects:{},titleterms:{indic:[],document:0,welcom:0,proteinart:0,tabl:[]}})
