@@ -4,20 +4,24 @@ set num_steps [molinfo top get numframes]
 
 set ALL [atomselect top "protein and name CA" frame 0]
 set COM_all [measure center $ALL weight mass]
-set output_file [open EC-TM_twist.dat w]
+set output_file [open [lindex $agrv 2].dat w]
+set vmdsel_TM [lindex $argv 3]
+set vmdsel_EC [lindex $agrv 4]
+regsub -all {_} $vmdsel_TM " " vmdsel_TM
+regsub -all {_} $vmdsel_EC " " vmdsel_EC
 
 for {set frame 0} {$frame < $num_steps} {incr frame} {
-    set TM_A [atomselect 0 "protein and chain A and resid 211 to 339 and name CA" frame $frame]
-    set TM_B [atomselect 0 "protein and chain B and resid 211 to 339 and name CA" frame $frame]
-    set TM_C [atomselect 0 "protein and chain C and resid 211 to 339 and name CA" frame $frame]
-    set TM_D [atomselect 0 "protein and chain D and resid 211 to 339 and name CA" frame $frame]
-    set TM_E [atomselect 0 "protein and chain E and resid 211 to 339 and name CA" frame $frame]
+    set TM_A [atomselect 0 "protein and chain A and $vmdsel_TM and name CA" frame $frame]
+    set TM_B [atomselect 0 "protein and chain B and $vmdsel_TM and name CA" frame $frame]
+    set TM_C [atomselect 0 "protein and chain C and $vmdsel_TM and name CA" frame $frame]
+    set TM_D [atomselect 0 "protein and chain D and $vmdsel_TM and name CA" frame $frame]
+    set TM_E [atomselect 0 "protein and chain E and $vmdsel_TM and name CA" frame $frame]
 
-    set EC_A [atomselect 0 "protein and chain A and resid 1 to 211 and name CA" frame $frame]
-    set EC_B [atomselect 0 "protein and chain B and resid 1 to 211 and name CA" frame $frame]
-    set EC_C [atomselect 0 "protein and chain C and resid 1 to 211 and name CA" frame $frame]
-    set EC_D [atomselect 0 "protein and chain D and resid 1 to 211 and name CA" frame $frame]
-    set EC_E [atomselect 0 "protein and chain E and resid 1 to 211 and name CA" frame $frame]
+    set EC_A [atomselect 0 "protein and chain A and $vmdsel_EC and name CA" frame $frame]
+    set EC_B [atomselect 0 "protein and chain B and $vmdsel_EC and name CA" frame $frame]
+    set EC_C [atomselect 0 "protein and chain C and $vmdsel_EC and name CA" frame $frame]
+    set EC_D [atomselect 0 "protein and chain D and $vmdsel_EC and name CA" frame $frame]
+    set EC_E [atomselect 0 "protein and chain E and $vmdsel_EC and name CA" frame $frame]
     
     set COM_eca [measure center $EC_A weight mass]
     set COM_tma [measure center $TM_A weight mass]
