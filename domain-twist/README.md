@@ -1,4 +1,4 @@
-This script calculates the Twist angle between transmembrane domain and the extracellular domain of ligand-gated ion channels. As long as two domains are aligned on z compoment of the principal axes in theory it should work.
+This script calculates the Twist angle between transmembrane domain and the extracellular domain of ligand-gated ion channels. As long as two domains are aligned on z compoment of the principal axes in theory it should work. Note ligand-gated ion channels I work with has 5 subunits. Script works with 5 chains for now.
 
 
 Run the script with ./twist.sh but do modify the arguments with your own inputs in the following order:
@@ -15,3 +15,4 @@ Run the script with ./twist.sh but do modify the arguments with your own inputs 
 
 -- Output file consists of 6 columns: frame, average angle of 5 subunits, indivudual angles of chain A-E. Frame corresponds to the time of the trajectory, but remember that with gromacs trajectories frame 0 is the pdb file loaded, frame 1 is the 0ns of the trajectory.
 
+EC-TM_twist_VMD_objects script contains an example of how to visualize the the twist wtih cones.
