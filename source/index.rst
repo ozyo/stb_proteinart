@@ -5,11 +5,11 @@
 
 Welcome to ProteinArt's documentation!
 ======================================
-Here I'll be providing the documentation for the applications and scripts for membrane protein simulations.
+I'll be providing the documentation for the applications and scripts for membrane protein simulations.
 
 Contents:
 	* :ref:`Visualising the ion channel <vtkPore>`
-	* :ref: `Domain twist <twist>`
+	* :ref:y`Domain twist <twist>`
 
 .. toctree::
    :hidden:
