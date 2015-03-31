@@ -9,7 +9,7 @@ I'll be providing the documentation for the applications and scripts for membran
 
 Contents:
 	* :ref:`Visualising the ion channel <vtkPore>`
-	* :ref:y`Domain twist <twist>`
+	* :ref:`Domain twist <twist>`
 
 .. toctree::
    :hidden:
