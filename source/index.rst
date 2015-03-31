@@ -9,10 +9,11 @@ Here I'll be providing the documentation for the applications and scripts for me
 
 Contents:
 	* :ref:`Visualising the ion channel <vtkPore>`
-	* Domain twist
+	* :ref: `Domain twist <twist>`
 
 .. toctree::
    :hidden:
    :maxdepth: 2
 
    vtk
+   twist
