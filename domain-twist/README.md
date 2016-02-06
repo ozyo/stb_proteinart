@@ -14,5 +14,3 @@ Run the script with ./twist.sh but do modify the arguments with your own inputs 
 -- Selections should be provided without any spaces, with underscores: i.e.: resid_211_to_339. Provide only the residue ids. The script selects the protein and the Calpha atoms by default. 
 
 -- Output file consists of 6 columns: frame, average angle of 5 subunits, indivudual angles of chain A-E. Frame corresponds to the time of the trajectory, but remember that with gromacs trajectories frame 0 is the pdb file loaded, frame 1 is the 0ns of the trajectory.
-
-EC-TM_twist_VMD_objects script contains an example of how to visualize the the twist wtih cones.
