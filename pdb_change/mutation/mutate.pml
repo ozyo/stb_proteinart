@@ -1,0 +1,45 @@
+cmd.load('only-protein_noMN-MC.pdb')
+cmd.wizard('mutagenesis')
+cmd.do("refresh_wizard")
+cmd.get_wizard().set_mode("PRO")
+cmd.get_wizard().do_select("chain A and resid 174")
+cmd.frame(1)
+cmd.get_wizard().apply()
+cmd.wizard(None)
+
+cmd.wizard('mutagenesis')
+cmd.do("refresh_wizard")
+cmd.get_wizard().set_mode("PRO")
+cmd.get_wizard().do_select("chain B and resid 174")
+cmd.frame(1)
+cmd.get_wizard().apply()
+cmd.wizard(None)
+
+cmd.wizard('mutagenesis')
+cmd.do("refresh_wizard")
+cmd.get_wizard().set_mode("PRO")
+cmd.get_wizard().do_select("chain C and resid 174")
+cmd.frame(1)
+cmd.get_wizard().apply()
+cmd.wizard(None)
+
+cmd.wizard('mutagenesis')
+cmd.do("refresh_wizard")
+cmd.get_wizard().set_mode("PRO")
+cmd.get_wizard().do_select("chain D and resid 174")
+cmd.frame(1)
+cmd.get_wizard().apply()
+cmd.wizard(None)
+
+cmd.wizard('mutagenesis')
+cmd.do("refresh_wizard")
+cmd.get_wizard().set_mode("PRO")
+cmd.get_wizard().do_select("chain E and resid 174")
+cmd.frame(1)
+cmd.get_wizard().apply()
+cmd.wizard(None)
+
+cmd.save("4TNV_L174P_5GLU.pdb") 
+
+
+

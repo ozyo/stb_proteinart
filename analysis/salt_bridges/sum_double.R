@@ -1,0 +1,6 @@
+df<-as.data.frame(read.table(file="clean_ELIC_CPZ.dat"))
+library('plyr')
+summed<-ddply(df, "df$V1", numcolwise(sum))
+summed<-cbind(summed,summed$V2/5/502*100)
+colnames(summed)<-c("pair","total","percentage")
+write.table(file="ELIC_CPZ_saltbridge.txt",row.names=FALSE,col.names=FALSE,as.table(cbind(as.vector(summed$pair),as.vector(summed$percentage))))

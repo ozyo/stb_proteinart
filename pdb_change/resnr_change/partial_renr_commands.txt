@@ -1,0 +1,5 @@
+python partial_renr_pdb.py GABAaR-A2B1A2B1G2_H.sapiens.B99990002_0001_rnr.pdb 315 349 381 A
+python partial_renr_pdb.py GABAaR-A2B1A2B1G2_H.sapiens.B99990002_0001_rnr.pdb 315 349 381 C
+python partial_renr_pdb.py GABAaR-A2B1A2B1G2_H.sapiens.B99990002_0001_rnr.pdb 311 345 415 B
+python partial_renr_pdb.py GABAaR-A2B1A2B1G2_H.sapiens.B99990002_0001_rnr.pdb 311 345 415 D
+python partial_renr_pdb.py GABAaR-A2B1A2B1G2_H.sapiens.B99990002_0001_rnr.pdb 326 361 393 E
