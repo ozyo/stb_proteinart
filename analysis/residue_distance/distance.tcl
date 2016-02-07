@@ -1,35 +1,19 @@
-mol load pdb [lindex $argv 0].pdb
-set output [open [lindex $argv 1].dat w]
+mol load pdb [lindex $argv 0] xtc [lindex $argv 1]
+
+set output [open [lindex $argv 2] w]
+set type [lindex $argv 3]
+set res1 [lindex $argv 4]
+set res2 [lindex $argv 5]
 
 set nf [molinfo top get numframes]
 
+if {$type == "intrasubunit"}{
 for {set i 0} {$i < $nf} {incr i} {
-
-    set sel1 [atomselect 0 "resid 66 and chain A" frame $i]
-    set com1 [measure center $sel1]
-    set sel2 [atomselect 0 "resid 63 and chain D" frame $i]
-    set com2 [measure center $sel2]
-
-    set sel3 [atomselect 0 "resid 66 and chain B" frame $i]
-    set com3 [measure center $sel3]
-    set sel4 [atomselect 0 "resid 63 and chain E" frame $i]
-    set com4 [measure center $sel4]
-
-    set sel5 [atomselect 0 "resid 66 and chain C" frame $i]
-    set com5 [measure center $sel5]
-    set sel6 [atomselect 0 "resid 63 and chain A" frame $i]
-    set com6 [measure center $sel6]
-
-    set sel7 [atomselect 0 "resid 66 and chain D" frame $i]
-    set com7 [measure center $sel7]
-    set sel8 [atomselect 0 "resid 63 and chain B" frame $i]
-    set com8 [measure center $sel8]
-
-    set sel9 [atomselect 0 "resid 66 and chain E" frame $i]
-    set com9 [measure center $sel9]
-    set sel10 [atomselect 0 "resid 63 and chain C" frame $i]
-    set com10 [measure center $sel10]
-
+    foreach x [list 1 2 3 4 5] y [list 1 2 3 4 5] ch [list A B C D E]{
+    set sel$x [atomselect 0 "resid $res1 and chain $ch" frame $i]
+    set com$x [measure center [set sel$x]]
+    set sel$y [atomselect 0 "resid $res2 and chain $ch" frame $i]
+    set com$y [measure center [set sel$y]]
 
     set distance_A [veclength [vecsub $com1 $com2]]
     set distance_B [veclength [vecsub $com3 $com4]]
@@ -39,7 +23,9 @@ for {set i 0} {$i < $nf} {incr i} {
     set avg_dist [expr ($distance_A + $distance_B + $distance_C + $distance_D + $distance_E)/5]
 
     puts $output $avg_dist
-} 
-
+    } 
+} else {
+    puts "Sorry, type intersubunit not implemented yet"
+}
 close $output
 quit

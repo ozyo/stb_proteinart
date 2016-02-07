@@ -15,3 +15,5 @@ Run the script with ./distance.sh but do modify the arguments with your own inpu
 -- By default script calculates the CA distances. 
 
 -- Output file consists of 6 columns: frame, averaage distance of 5 subunits, indivudual distance measurements. Frame corresponds to the time of the trajectory, but remember that with gromacs trajectories frame 0 is the pdb file loaded, frame 1 is the 0ns of the trajectory.
+
+*** KNOWN ISSUES: Type intersubunit not implemented yet.

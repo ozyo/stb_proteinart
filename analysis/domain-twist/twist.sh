@@ -1,1 +1,7 @@
-$VMD -dispdev text -e EC-TM_twist.tcl -args Reference_structure.pdb Trajectory.xtc output_name TM_selection_use_underscore EC_selection_use_underscore
+ref=$1
+traj=$2
+out=$3
+TM_sel=$4
+EC_sel=$5
+
+$VMD -dispdev text -e EC-TM_twist.tcl -args $ref $traj $out $TM_sel $EC_sel
