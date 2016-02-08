@@ -21,5 +21,4 @@ Contents:
    :maxdepth: 3
 
    vtk
-   twist
    analysis

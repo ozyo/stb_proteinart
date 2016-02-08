@@ -1,16 +1,19 @@
-This script calculates the Twist angle between transmembrane domain and the extracellular domain of ligand-gated ion channels. As long as two domains are aligned on z compoment of the principal axes in theory it should work. Note ligand-gated ion channels I work with has 5 subunits. Script works with 5 chains for now.
 
+Run the script with your input parameters.
 
-Run the script with ./twist.sh but do modify the arguments with your own inputs in the following order:
-(0) pdb file
-(1) trajectory file
-(2) output file (extension set as .dat if you want to modify change it in the .tcl file)
-(3) transmembrane domain selection
-(4) extracelluar domain selection
+``./twist.sh pdb traj output domain1 domain2``
 
+(0) pdb: name of the pdb file 
+(1) traj: name of the trajectory file (format required .xtc)
+(2) output: name of the output file
+(3) domain1: Residue selection in VMD format for domain 1 prodived with underscores instead of spaces; resid_211_339 (i.e. transmembrane domain residues of GluCl) 
+(4) domain2: Residue selection for domain 2. Same syntax as domain 1 applies; resid_1_210 (i.e. Extracellular domain of GluCl )
 
--- Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. The fitting of the trajectory should be done before running this script using Calpha atoms of the protein to the pdb file.
+Output Format: Tab seperated file with 6 column: Frame (Time), average angle over 5 subunits, indivudual angles for each chain.
+
+**KNOWN ISSUES**
+-- Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. 
+
+-- Fitting and periodic boundary should be handled before.
  
 -- Selections should be provided without any spaces, with underscores: i.e.: resid_211_to_339. Provide only the residue ids. The script selects the protein and the Calpha atoms by default. 
-
--- Output file consists of 6 columns: frame, average angle of 5 subunits, indivudual angles of chain A-E. Frame corresponds to the time of the trajectory, but remember that with gromacs trajectories frame 0 is the pdb file loaded, frame 1 is the 0ns of the trajectory.
