@@ -16,7 +16,7 @@ Domain-Twist
 ------------
 The script calculates the angle between two domains using the center of masses (COM). COM of each domain is projected onto the xy plane perpendecilar to the channel axis. With this convention the angle is defined between the vectors drawn from COM of the receptor to the COM of each domain.
 
-.. image:: images/Domain-Twist.jpg
+.. image:: ../source/images/Domain-Twist.jpg
  
 Requirements:
 ^^^^^^^^^^^^^

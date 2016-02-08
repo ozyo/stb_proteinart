@@ -13,7 +13,6 @@ Welcome to STB ProteinArt's documentation!
 	Below you'll find examples of scripts I wrote in order to analyze molecular dynamics simulations of ligand-gated ion channels. They are highly biased towards the pentameric ligand gated ion channels, aka cys-loop receptors. With a bit of modification they will be applicable to any system. Feel free to make suggesstions. You are more than welcomed to contribute with your own scripts or make modifications to the scripts on github. 
 Contents:
 	* :ref:`Visualising the ion channel <vtkPore>`
-	* :ref:`Domain twist <twist>`
 	* :ref:`Analysis <analysis>`
 
 .. toctree::
