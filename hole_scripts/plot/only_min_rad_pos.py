@@ -1,16 +1,21 @@
 import re, os, math
 from collections import defaultdict
+import numpy as np
+from scipy import stats
 
-#datadir='/Users/ozge/Documents/Analysis/3RIF_wGLU_wIVM/GluCl_wIVM_wGLU_pore/logs'
 def f2(seq): 
-   # order preserving
    checked = []
    for e in seq:
        if e not in checked:
            checked.append(e)
    return checked
 
+outype=os.environ["type"]
 datad=os.environ["datadir"]
+outname=open(os.environ["output"],"w")
+llim=float(os.environ["llim"])
+ulim=float(os.environ["ulim"])
+step=float(os.environ["step"])
 
 minimum_frame={}
 
@@ -24,6 +29,7 @@ frame_list=f2(frame_list_dup)
 minimum_radius=[{}for frame in frame_list]
 out_matrix=[{}for frame in frame_list]
 m_r_temp={}
+
 for frame in frame_list:
     i_name,i_ext=os.path.splitext(frame)
     i_number=i_name.translate(None,'frame_')
@@ -51,20 +57,20 @@ for frame in frame_list:
     min_I=min(radius)
     keys=out_matrix[i_number].keys()
     ind=radius.index(min_I)
-#    for key in keys:
-#        if key == str('42.00000'):
-#            print i_number, out_matrix[i_number][key][0]
-    #print i_number, min_I, min_rad, keys[ind]
-    print i_number, keys[ind]
-#for key in sorted(out_matrix[799].keys()):
-#    print key+'\t'+out_matrix[799][key][0]
+    if outtype == "minrad":
+       outname.write(str(i_number)+'\t'+str(min_I)+'\t'+str(keys[ind])+'\n')
+    elif outtype == "region":
+       region=[]
+       for key in keys:
+          if float(key) in np.arange(llim,ulim,step):
+             region.append(float(out_matrix[i_number][key][0]))
+       mean=np.mean(region)
+       stdev=np.std(region)
+       outname.write(str(i_number)+' '+str(mean)+' '+str(stdev)+'\n')
+    else:
+       continue
 
-###BELOW IS NOT IN USE ???
-#    for x in radius:
-#        x=float(x)
-#        if round(x,3) == float(min_rad):
-#            keys=out_matrix[i_number].keys()
-#            ind=radius.index(str(x))
-#            print keys[ind]
-            
-            
+if outtype == "frame":
+   time=int(os.environ["time"])
+   for key in sorted(out_matrix[time].keys()):
+      outname.write(str(key)+'\t'+str(out_matrix[time][key][0]+'\n')

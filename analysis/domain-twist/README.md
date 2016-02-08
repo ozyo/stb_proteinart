@@ -12,8 +12,9 @@ Run the script with your input parameters.
 Output Format: Tab seperated file with 6 column: Frame (Time), average angle over 5 subunits, indivudual angles for each chain.
 
 **KNOWN ISSUES**
--- Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. 
 
--- Fitting and periodic boundary should be handled before.
+- Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. 
+
+- Fitting and periodic boundary should be handled before.
  
--- Selections should be provided without any spaces, with underscores: i.e.: resid_211_to_339. Provide only the residue ids. The script selects the protein and the Calpha atoms by default. 
+- Selections should be provided without any spaces, with underscores: i.e.: resid_211_to_339. Provide only the residue ids. The script selects the protein and the Calpha atoms by default. 

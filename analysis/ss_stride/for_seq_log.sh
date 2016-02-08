@@ -1,4 +1,4 @@
-inp=$1
+inp=${1%.*}
 resnr=$2
 
 rm $inp\_for_seqLogo.dat
@@ -11,4 +11,5 @@ cut -c $[resnr*8+1]\-$[resnr*10] $inp.dat >> $dfile\_for_seqLogo.dat
 sed -i '' '/^[A-Z]/i \
 > \
 ' $inp\_for_seqLogo.dat
-weblogo/seqlogo -f $inp\_for_seqLogo.dat -c -e -a -p -F PDF -h 5 -w $resnr > $inp\_for_seqLogo.pdf
+$weblogo/seqlogo -f $inp\_for_seqLogo.dat -c -e -a -p -F PDF -h 5 -w $resnr > $inp\_for_seqLogo.pdf
+rm $inp\_for_seqLogo.dat

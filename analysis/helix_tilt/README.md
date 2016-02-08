@@ -1,13 +1,19 @@
-This script calculates the tilt angle of the transmembrane helices relative to the channel axis in pentameric ligand-gated ion channels. The tilt angle is defined between on the xz plane of helical axis and the channel axis (pore). Script is hardcoded to work with 5 chains for now. 
 
-Run the script with ./helix_twist.sh but do modify the arguments with your own input parameters in the following order:
-(0) pdb file
-(1) trajectory file
-(2) output file 
-(3) Helix selection
+Run the script with
 
--- Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. The fitting of the trajectory should be done before running this script using Calpha atoms of the protein to the pdb file.
+``./helix_tilt.sh pdb traj output helix`` 
+
+(0) pdb: name of the pdb file 
+(1) traj: name of the trajectory file (format required .xtc)
+(2) output: name of the output file
+(3) helix: Residue selection in VMD format for transmembrane helix; resid_242_265 (i.e. transmembrane domain residues of GluCl) 
+
+Output Format: Tab seperated file with 6 column: Frame (Time), average angle over 5 subunits, indivudual angles for each subunit.
+
+**KNOWN ISSUES**
+
+- Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. 
+
+- Fitting and periodic boundary should be handled before.
  
--- Selections should be provided without any spaces, with underscores: i.e.: resid_211_to_339. Provide only the residue ids. The script selects the protein and the Calpha atoms by default. 
-
--- Output file consists of 6 columns: frame, average angle of 5 helices, indivudual angles of chain A-E. Frame corresponds to the time of the trajectory, but remember that with gromacs trajectories frame 0 is the pdb file loaded, frame 1 is the 0ns of the trajectory.
+- Selections should be provided without any spaces, with underscores: i.e.: resid_211_to_339. Provide only the residue ids. The script selects the protein and the Calpha atoms by default. 
