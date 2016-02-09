@@ -16,7 +16,7 @@ Within the directory where twist.sh script is located run
 
 ``bash twist.sh /path/to/stb_proteinart/examples/GluCl.pdb /path/to/stb_proteinart/examples/GluCl_md4.xtc twist.dat resid_211_339 resid_1_210``
 
-The output you will get contains a reduced version of the data presented in artcile `Yoluk et al. (2015)<http://pubs.acs.org/doi/abs/10.1021/acschemneuro.5b00111>`_.
+The output you will get contains a reduced version of the data presented in artcile `Yoluk et al.(2015) <http://pubs.acs.org/doi/abs/10.1021/acschemneuro.5b00111>`_.
 
 **KNOWN ISSUES**
 
