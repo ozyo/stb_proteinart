@@ -5,4 +5,4 @@ resnr=$4
 
 $VMD -dispdev text -e traj_play_ss.tcl -args $ref $traj $out $ss_traj
 
-./for_seq_log.sh $out $resndr
+. ./for_seq_log.sh $out $resnr

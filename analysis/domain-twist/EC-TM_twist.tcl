@@ -4,9 +4,9 @@ set num_steps [molinfo top get numframes]
 
 set ALL [atomselect top "protein and name CA" frame 0]
 set COM_all [measure center $ALL weight mass]
-set output_file [open [lindex $agrv 2].dat w]
+set output_file [open [lindex $argv 2] w]
 set vmdsel_TM [lindex $argv 3]
-set vmdsel_EC [lindex $agrv 4]
+set vmdsel_EC [lindex $argv 4]
 regsub -all {_} $vmdsel_TM " " vmdsel_TM
 regsub -all {_} $vmdsel_EC " " vmdsel_EC
 

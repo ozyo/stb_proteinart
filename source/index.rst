@@ -6,18 +6,15 @@
 Welcome to STB ProteinArt's documentation!
 ===========================================
 
-	As a traitor to biology field I have found the meaning of life in doing molecular dynamics simulations. It feels a bit like playing a vidoe game with one big exception. You most certainly do not have a game controller. You are the creator of the video game, you'll code. Your code will come to life. But during the development stage it will look nothing like a video game. 
+	The biggest challange for a biologist or an experimentalist in computational biology field is the lack of "computational" knowledge. There are many tools out there, yet there are many times you need to write your own script. The scripts collected in this github repo are the product of those needs. They were written specifically for pentameric ligand-gated ion channels. With some modification they are applicable to any membrane protein. The future releases will cover this issue. 
 
-	As a traitor to biology field I often find myself in front of a big giant rock in computational biophysics field (computational biology, biophysics, etc. etc.). You need to defeat that rock, turn it into sand just with your thoughts. You should be able to come up with a quick plan on how to break the rock into smaller pieces, how to turn those smaller pieces into sand. Of course there might be ways to directly turn it into sand without going through the smaller pieces. But in order to do that you need to be good if not an expert in coding. I'm not yet in the stage of obtaining smaller pieces of rock. I merely scratch the surface of it to get nanograms of dust. I don't expect to create miracles by learning basic commands of github. But it will help to keep track which tool gave me the highest amount of dust will be a good beginning. 
+	You will realise quickly, I do not have the programmer's discipline. The scripts here have no proper comments or markups. Well not yet anyways. But I hope to change that and adapt better ways of coding and this repo is my first attempt. If you are a newby in computational biology on the other hand, I hope you will find these scripts inspirational and realise that this field is fun and not scary at all. Afterall I am one who did not touch a computer before 2004. I also did not magically start coding right away. My proper introduction to the terminal was not until 2009 and I have three papers and a master thesis which contains results produced with some scripts or bash commands. You see it is doable to make the change and learn to use the terminal or programming. The hard part is to be disciplined, writing codes that are for general use with documentations, test sets and error checks. Maintaining this repo will help me exactly at this point. Opening the doors to my secret codes, I force myself to think from the users perspectives and improve my work.
 
-	Below you'll find examples of scripts I wrote in order to analyze molecular dynamics simulations of ligand-gated ion channels. They are highly biased towards the pentameric ligand gated ion channels, aka cys-loop receptors. With a bit of modification they will be applicable to any system. Feel free to make suggesstions. You are more than welcomed to contribute with your own scripts or make modifications to the scripts on github. 
-Contents:
-	* :ref:`Visualising the ion channel <vtkPore>`
-	* :ref:`Analysis <analysis>`
+	So enjoy the site. Suggestions are welcomed (contact: ozyo_at_stbproteinart.net).
 
 .. toctree::
    :hidden:
    :maxdepth: 3
-
-   vtk
+   
    analysis
+   HOLE

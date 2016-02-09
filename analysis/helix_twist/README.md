@@ -10,6 +10,8 @@ Run the script with
 
 Output Format: Tab seperated file with 6 column: Frame (Time), average angle over 5 subunits, indivudual angles for each subunit.
 
+Example: You can test the scripts with the sample trajectory and the pdb provided in the examples folder. To calculate the angle of the gating helix use this selection resid_242_265.
+
 **KNOWN ISSUES**
 
 - Trajectory and pdb files should be aligned so that the z component of the principal axes is parallel to the pore. 
