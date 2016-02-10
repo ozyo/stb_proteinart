@@ -10,6 +10,7 @@ set vmdsel_EC [lindex $argv 4]
 regsub -all {_} $vmdsel_TM " " vmdsel_TM
 regsub -all {_} $vmdsel_EC " " vmdsel_EC
 
+foreach ch in [list A B C D E]{
 for {set frame 0} {$frame < $num_steps} {incr frame} {
     set TM_A [atomselect 0 "protein and chain A and $vmdsel_TM and name CA" frame $frame]
     set TM_B [atomselect 0 "protein and chain B and $vmdsel_TM and name CA" frame $frame]
