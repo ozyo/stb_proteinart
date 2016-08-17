@@ -1,5 +1,6 @@
 mol load pdb [lindex $argv 0] 
-mol load pdb [lindex $argv 1]
+mol load pdb [lindex $argv 1] 
+#xtc [lindex $argv 1]
 
 set num_steps [molinfo 1 get numframes]
 
