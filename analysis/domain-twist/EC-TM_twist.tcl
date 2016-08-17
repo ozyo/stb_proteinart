@@ -1,9 +1,9 @@
 mol load pdb [lindex $argv 0] 
 mol load pdb [lindex $argv 1]
 
-set num_steps [molinfo top get numframes]
+set num_steps [molinfo 1 get numframes]
 
-set ALL [atomselect 0 "protein and name CA"]
+set ALL [atomselect 0 "name CA"]
 set COM_all [measure center $ALL weight mass]
 set output_file [open [lindex $argv 2] w]
 set vmdsel_TM [lindex $argv 3]
@@ -11,12 +11,11 @@ set vmdsel_EC [lindex $argv 4]
 regsub -all {_} $vmdsel_TM " " vmdsel_TM
 regsub -all {_} $vmdsel_EC " " vmdsel_EC
 
-foreach ch in [list A B C D E]{
 for {set frame 0} {$frame < $num_steps} {incr frame} {
-    foreach ch in [list A B C D E]{
+    foreach ch {A B C D E} {
 
-	set TM [atomselect 1 "protein and chain $ch and $vmdsel_TM and name CA" frame $frame]
-	set EC [atomselect 1 "protein and chain $ch and $vmdsel_EC and name CA" frame $frame]
+	set TM [atomselect 1 "chain $ch and $vmdsel_TM and name CA" frame $frame]
+	set EC [atomselect 1 "chain $ch and $vmdsel_EC and name CA" frame $frame]
 
 	set COM_ec [measure center $EC weight mass]
 	set COM_tm [measure center $TM weight mass]
