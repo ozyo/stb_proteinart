@@ -4,7 +4,7 @@ Run the script with your input parameters.
 ``./twist.sh pdb traj output domain1 domain2``
 
 (0) pdb: name of the pdb file 
-(1) traj: name of the trajectory file (format required .xtc)
+(1) traj: name of the trajectory file (format required multi pdb (can be easily modified to read other traj files))
 (2) output: name of the output file
 (3) domain1: Residue selection in VMD format for domain 1 prodived with underscores instead of spaces; resid_211_339 (i.e. transmembrane domain residues of GluCl) 
 (4) domain2: Residue selection for domain 2. Same syntax as domain 1 applies; resid_1_210 (i.e. Extracellular domain of GluCl )
