@@ -1,0 +1,1 @@
+Calculating the rotation of an helix relative to another domain. Script deals with the fitting, works with two chains and hardcoded for CAP variables. It will be generalized on an unforseen day. 

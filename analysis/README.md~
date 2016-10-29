@@ -39,10 +39,6 @@ How to Use (Tilt):
 ^^^^^^^^^^^^^^^^^^
 .. include:: ../analysis/helix_twist/README.md
 
-**Helix Rotation**
-==================
-.. include:: ../analysis/helix_rotation/README.md
-
 **Ca-Ca distance**
 ==================
 Measuring Ca distance is a trivial task using any gromacs tools. However with pentameric symettry, it is possible that the minimum distance between two residues is not always the desired outcome. To overcome this, I had to create an index file with at least 10 entries and loop over it. Well, same calculation with VMD is more flexible and does not require an extra index file. Therefore I prefer to use VMD for distance analysis over GROMACS tools in some cases.
@@ -78,4 +74,3 @@ Requirements:
 How to Use:
 ^^^^^^^^^^^
 .. include:: ../analysis/ss_stride/README.md
-
