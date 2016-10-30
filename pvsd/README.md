@@ -8,3 +8,10 @@ These scripts are meant for creating virtual sites via pdb2gmx. STaGE creates to
 No estimation of binding energies perhaps, but when you look at conformational changes no need for that high accuracy. 
 
 These scripts are quite preliminary. 
+
+Things that are needed:
+-- A different tool to compare the generated topologies without vsite
+-- Checking for vsite types that are not available
+-- Creating a full list of atomtypes or leave it to molecule specific only?
+-- Creating .hdb file automated
+-- Creating a full list for .vsd file or molecule specific only?
