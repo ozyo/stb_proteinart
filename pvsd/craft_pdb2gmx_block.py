@@ -21,9 +21,9 @@ for line in top:
 dihedral=[]
 dihedralRead=False
 for line in top:
-    if "dihedrals" in line:
+    if "dihedrals" in line and "impropers" not in line:
         dihedralRead=True
-    elif "ifdef" in line:
+    elif "impropers" in line:
         dihedralRead=False
     if dihedralRead is True:
         try:
@@ -36,6 +36,23 @@ for line in top:
         except IndexError:
             pass
 
+improper=[]
+improperRead=False
+for line in top:
+    if "impropers" in line:
+        improperRead=True
+    elif "#ifdef" in line:
+        improperRead=False
+    if improperRead is True:
+        try:
+            im1=line.split()[0].strip()
+            im2=line.split()[1].strip()
+            im3=line.split()[2].strip()
+            im4=line.split()[3].strip()
+            im1234=(im1,im2,im3,im4)
+            improper.append(im1234)
+        except IndexError:
+            pass
 
 atomnumbers={}
 names_types_charge_number=[]
@@ -77,28 +94,12 @@ for i in dihedral:
         out.write('  '+atomnumbers[i[0]]+'\t'+atomnumbers[i[1]]+'\t'+atomnumbers[i[2]]+'\t'+atomnumbers[i[3]]+'\n')
     except KeyError:
         pass
+
+out.write(' [ impropers ]'+'\n')
+for i in improper:
+    try:
+        out.write('  '+atomnumbers[i[0]]+'\t'+atomnumbers[i[1]]+'\t'+atomnumbers[i[2]]+'\t'+atomnumbers[i[3]]+'\n')
+    except KeyError:
+        pass
 out.close()
 
-# print '[ IVM ]'
-# print ' [ atoms ]'
-# for i in names_types_charge_number:
-#     try:
-#         print '  '+str(i[0])+'\t'+str(i[1])+'\t'+str(i[2])+'\t'+str(i[3])+'\t'
-#     except KeyError:
-#         pass
-
-# print ' [ bonds ]'
-
-# for i in bonds:
-#     try:
-#         print '  '+atomnumbers[i[0]]+'\t'+atomnumbers[i[1]]
-#     except KeyError:
-#         pass
-
-# print ' [ dihedrals ]'
-
-# for i in dihedral:
-#     try:
-#         print '  '+atomnumbers[i[0]]+'\t'+atomnumbers[i[1]]+'\t'+atomnumbers[i[3]]+'\t'+atomnumbers[i[3]]
-#     except KeyError:
-#         pass

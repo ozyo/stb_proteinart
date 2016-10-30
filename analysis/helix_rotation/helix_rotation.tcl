@@ -1,5 +1,5 @@
 #This script calculates the domain rotation in CAP. To be more accurate it calculates the rotation of a helix in one domain, relative to another domain. 
-# I don't have an example for this system since I wrote it for Ahmet Yildirim's data on CAP. But it should work fine, since I tested it with crystal structures.
+# I don't have an example for this system since I wrote it for Ahmet Yildirim's data on CAP. There is no projection of the helical axis. Script itself works with crystal structures. However it requires some more extra steps to make the calculation meaningful.
 
 mol load pdb [lindex $argv 0].pdb
 mol load pdb [lindex $argv 1].pdb xtc [lindex $argv 2].xtc
@@ -45,7 +45,7 @@ foreach ch [list A B] {
 	set hel2 [vecsub [lindex $I_hel_2 2] [vecscale $dot2 [lindex $I 2]]]
 
 	set rot [angle $hel1 $hel2]
-	puts "$i $rot"
+	puts $output "$i $rot"
     }
     close $output
 }

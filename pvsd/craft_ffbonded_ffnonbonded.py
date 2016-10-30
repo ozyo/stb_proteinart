@@ -61,6 +61,8 @@ for line in top:
             
 
 ##dihedral section
+# I am reading both impropers and propers together in here. But for the sake of rtp entry they should seperated.
+
 dihedrals=[]
 dihedralRead=False
 for line in top:

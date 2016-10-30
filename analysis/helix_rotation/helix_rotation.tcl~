@@ -1,4 +1,5 @@
 #This script calculates the domain rotation in CAP. To be more accurate it calculates the rotation of a helix in one domain, relative to another domain. 
+# I don't have an example for this system since I wrote it for Ahmet Yildirim's data on CAP. But it should work fine, since I tested it with crystal structures.
 
 mol load pdb [lindex $argv 0].pdb
 mol load pdb [lindex $argv 1].pdb xtc [lindex $argv 2].xtc
