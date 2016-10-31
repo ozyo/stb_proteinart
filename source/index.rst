@@ -18,5 +18,5 @@ Welcome to STB ProteinArt's documentation!
    
    analysis
    HOLE
-   GLIC.ipynb
+   GLIC
    calculations
