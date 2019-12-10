@@ -4,7 +4,7 @@ mol load pdb [lindex $argv 0]
 mol load pdb [lindex $argv 0]
 mol load pdb [lindex $argv 0]
 mol load pdb [lindex $argv 0] xtc [lindex $argv 1]
-set output_file [open [lindex $agrv 2] w]
+set output_file [open [lindex $argv 2] w]
 set vmdsel_helix [lindex $argv 3]
 regsub -all {_} $vmdsel_helix " " vmdsel_helix
 
